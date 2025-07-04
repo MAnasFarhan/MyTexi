@@ -1,0 +1,26 @@
+{
+  "name": "mytexi",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000M\u0000y\u0000T\u0000e\u0000x\u0000i\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MAnasFarhan/MyTexi.git"
+  },
+  "keywords": [],
+  "author": "Anas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MAnasFarhan/MyTexi/issues"
+  },
+  "homepage": "https://github.com/MAnasFarhan/MyTexi#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "mongodb": "^6.17.0"
+  },
+  "devDependencies": {}
+}
