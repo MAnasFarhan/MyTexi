@@ -13,6 +13,11 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+app.get("/", (req, res) => {
+  res.send(" MyTaxi backend is running on Azure!");
+});
+
+
 const uri = 'mongodb+srv://Farhan:Anaskulim123@mytexi-c.t2bkcu2.mongodb.net/';
 const client = new MongoClient(uri);
 let db;
