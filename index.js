@@ -54,7 +54,7 @@ async function start() {
         console.log("Connected to MongoDB");
 
         // --- Start Server --- //
-        app.listen(port, () => console.log(`Server running at http://localhost:${port}`));
+        app.listen(port, () => console.log(`Listening on PORT:${port}`));
     } catch (err) {
         console.error(err);
         process.exit(1); // Exit if DB connection fails
@@ -576,5 +576,5 @@ app.get('/auth/profile', authenticate, async (req, res) => {
 app.use(express.static(path.join(__dirname)));
 
 // --- Start Server --- //
-app.listen(port, () => console.log(`Server running at http://localhost:${port}`));
+app.listen(port, () => console.log(`Listening on PORT:${port}`));
 
