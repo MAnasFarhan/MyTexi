@@ -126,7 +126,7 @@
   padding: 2rem;
   border-radius: 20px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  border: 2px solid #f57373; /* light blue border */
+  border: 2px solid #f57373; 
   max-width: 800px;
   width: 100%;
   margin: auto;
@@ -142,7 +142,7 @@
 }
 
 .driver-buttons button {
-  background: linear-gradient(to right, #f78989, #38bdf8); /* lighter blue gradient */
+  background: linear-gradient(to right, #f78989, #38bdf8); 
   color: #ffffff;
   border: none;
   padding: 10px 20px;
@@ -154,7 +154,7 @@
 
 .driver-buttons button:hover {
   transform: scale(1.05);
-  background: linear-gradient(to right, #60a5fa, #2563eb); /* soft hover */
+  background: linear-gradient(to right, #60a5fa, #2563eb); 
 }
 
 .admin-container {
@@ -163,8 +163,8 @@
   border-radius: 20px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   border: 2px solid #fbcfe8;
-  width: 95vw;           /*  Almost full screen */
-  max-width: 900px;     /*  Wide on large screens */
+  width: 95vw;           
+  max-width: 900px;     
   margin: 2rem auto;
   text-align: left;
   overflow-x: auto;
@@ -174,7 +174,7 @@
 .admin-title {
   font-size: 2rem;
   font-weight: 700;
-  color: #4c1d95; /* violet text */
+  color: #4c1d95; 
   margin-bottom: 1.5rem;
 }
 
@@ -187,7 +187,7 @@
 }
 
 .admin-buttons button {
-  background: linear-gradient(to right, #fc94cf, #ffffff); /* pink → violet */
+  background: linear-gradient(to right, #fc94cf, #ffffff); 
   color: #111;
   border: none;
   padding: 10px 20px;
@@ -355,6 +355,7 @@
   </div>
 </div>
 
+/<!-- Scroll to Top Button -->
 <div id="whatsNewModal" style="display: none; position: fixed; top: 10%; left: 50%; transform: translateX(-50%); width: 80%; max-width: 500px; background: white; border: 2px solid #00ced1; border-radius: 10px; padding: 20px; z-index: 1000; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
   <h3 style="margin-bottom: 1rem;">🚀 What's New</h3>
   <ul style="line-height: 1.6;">
@@ -382,117 +383,85 @@
   </div>
 </div>
 
-
   <script>
     
  const fareTable = {
   "utem-lestari|melaka sentral": 15,
   "melaka sentral|utem-lestari": 15,
-
   "utem-lestari|utem-satria": 4,
   "utem-satria|utem-lestari": 4,
-
   "utem-lestari|mitc": 7.5,
   "mitc|utem-lestari": 7.5,
-
   "utem-lestari|mydin": 7.5,
   "mydin|utem-lestari": 7.5,
-
   "utem-lestari|melaka mall": 11,
   "melaka mall|utem-lestari": 11,
-
   "utem-lestari|aeon ayer keroh": 12,
   "aeon ayer keroh|utem-lestari": 12,
-
   "utem-lestari|lotus cheng": 14,
   "lotus cheng|utem-lestari": 14,
-
   "utem-satria|melaka sentral": 15,
   "melaka sentral|utem-satria": 15,
-
   "utem-satria|mitc": 7.5,
   "mitc|utem-satria": 7.5,
-
   "utem-satria|mydin": 7.5,
   "mydin|utem-satria": 7.5,
-
   "utem-satria|melaka mall": 11,
   "melaka mall|utem-satria": 11,
-
   "utem-satria|aeon ayer keroh": 12,
   "aeon ayer keroh|utem-satria": 12,
-
   "utem-satria|lotus cheng": 14,
   "lotus cheng|utem-satria": 14,
-
   "melaka sentral|mitc": 9,
   "mitc|melaka sentral": 9,
-
   "melaka sentral|melaka mall": 4.5,
   "melaka mall|melaka sentral": 4.5,
-
   "melaka sentral|mydin": 9,
   "mydin|melaka sentral": 9,
-
   "melaka sentral|aeon ayer keroh": 4.5,
   "aeon ayer keroh|melaka sentral": 4.5,
-
     "melaka sentral|lotus cheng": 11,
     "lotus cheng|melaka sentral": 11,
-
     "mitc|melaka mall": 5,
     "melaka mall|mitc": 5,
-
     "mitc|mydin": 4,
     "mydin|mitc": 4,
-
     "mitc|aeon ayer keroh": 5.5,
     "aeon ayer keroh|mitc": 5.5,
-
     "mitc|lotus cheng": 9.5,
     "lotus cheng|mitc": 9.5,
-
     "melaka mall|mydin": 5,
     "mydin|melaka mall": 5,
-
     "melaka mall|aeon ayer keroh": 4,
     "aeon ayer keroh|melaka mall": 4,
-
     "melaka mall|lotus cheng": 11,
     "lotus cheng|melaka mall": 11,
-
     "mydin|aeon ayer keroh": 6,
     "aeon ayer keroh|mydin": 6,
-
     "mydin|lotus cheng": 10,
     "lotus cheng|mydin": 10,
-
     "aeon ayer keroh|lotus cheng": 14,
     "lotus cheng|aeon ayer keroh": 14
-
 };
-
-
-
+// Function to toggle the "What's New" modal
     function showRegister() {
       document.getElementById('authBox').style.display = 'none';
       document.getElementById('registerBox').style.display = 'block';
     }
-
+    // Function to toggle the "What's New" modal
     function showLogin() {
       document.getElementById('registerBox').style.display = 'none';
       document.getElementById('authBox').style.display = 'block';
     }
-
+      // Function to toggle the "What's New" modal  
     function handleLogout() {
       localStorage.removeItem('token');
       location.reload();
     }
-
     document.getElementById('role').addEventListener('change', function () {
       document.getElementById('adminKeyGroup').style.display = this.value === 'admin' ? 'block' : 'none';
     });
-
+// Function to toggle the "What's New" modal
     async function handleLogin() {
       const email = document.getElementById('loginEmail').value.trim();
       const password = document.getElementById('loginPassword').value.trim();
@@ -514,7 +483,7 @@
         alert('Login error.');
       }
     }
-
+// Function to toggle the "What's New" modal
     async function handleRegister() {
       const name = document.getElementById('fullName').value.trim();
       const email = document.getElementById('regEmail').value.trim();
@@ -525,7 +494,7 @@
         alert('All fields are required.');
         return;
       }
-
+// Validate email format
       const payload = { name, email, password, role };
       if (adminKey) payload.adminKey = adminKey;
 
@@ -544,7 +513,7 @@
         alert('Registration error.');
       }
     }
-
+// Function to toggle the "What's New" modal
     async function loadProfile() {
   const token = localStorage.getItem('token');
   if (!token) return;
@@ -578,7 +547,7 @@
     alert('Failed to load profile.');
   }
 }
-
+// Function to toggle the "What's New" modal
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
@@ -587,14 +556,14 @@ window.onscroll = function () {
   document.getElementById('scrollTopBtn').style.display = window.scrollY > 300 ? 'block' : 'none';
 };
 
-
+// Function to toggle the "What's New" modal
     function toggleCreateOrderForm() {
       const form = document.getElementById('createOrderForm');
       const orders = document.getElementById('ordersList');
       orders.innerHTML = '';
       form.style.display = form.style.display === 'none' ? 'block' : 'none';
     }
-
+// Function to toggle the "What's New" modal
     function toggleOrdersList() {
       const form = document.getElementById('createOrderForm');
       const orders = document.getElementById('ordersList');
@@ -605,7 +574,7 @@ window.onscroll = function () {
         loadOrders();
       }
     }
-
+// Function to toggle the "What's New" modal
     function autoCalculatePayment() {
       const pickup = document.getElementById('pickup').value;
       const destination = document.getElementById('destination').value;
@@ -613,7 +582,7 @@ window.onscroll = function () {
       const fare = fareTable[key] || '';
       document.getElementById('payment').value = fare;
     }
-
+// Function to toggle the "What's New" modal
     async function submitOrder() {
       const token = localStorage.getItem('token');
       const date = document.getElementById('orderDate').value.trim();
@@ -647,7 +616,7 @@ window.onscroll = function () {
         alert('Order creation error.');
       }
     }
-
+// Function to toggle the "What's New" modal
     async function loadOrders() {
   const token = localStorage.getItem('token');
   const ordersBox = document.getElementById('ordersList');
@@ -694,9 +663,6 @@ window.onscroll = function () {
     <button onclick="showFeedbackForm('${o._id}')">Give Feedback</button>
   `;
 }
-
-
-
           section += `</div>`;
         });
       }
@@ -714,8 +680,7 @@ window.onscroll = function () {
     ordersBox.innerHTML = 'Error loading orders.';
   }
 }
-
-
+// Function to toggle the "What's New" modal
     async function cancelOrder(id) {
       const token = localStorage.getItem('token');
       if (!confirm('Cancel this order?')) return;
@@ -735,14 +700,12 @@ window.onscroll = function () {
         alert('Cancel error.');
       }
     }
-
     // Auto load profile if token is present
     window.onload = loadProfile;
- 
+ // Function to toggle the "What's New" modal
     async function loadProfile() {
   const token = localStorage.getItem('token');
   if (!token) return;
-
   try {
     const res = await fetch('/auth/profile', {
       headers: { Authorization: 'Bearer ' + token }
@@ -751,7 +714,6 @@ window.onscroll = function () {
     if (res.ok) {
       document.getElementById('authBox').style.display = 'none';
       document.getElementById('registerBox').style.display = 'none';
-
       // Show driver panel if role is driver
       if (data.role === 'driver') {
         document.getElementById('driverDashboard').style.display = 'block';
@@ -763,28 +725,25 @@ window.onscroll = function () {
         document.getElementById('adminDashboard').style.display = 'block';
         document.getElementById('adminWelcome').innerText = `Welcome, ${data.name}!`;
       }
-
     }
   } catch {
     alert('Failed to load profile.');
   }
 }
-
+// Function to toggle the "What's New" modal
 async function loadPendingOrders() {
   const token = localStorage.getItem('token');
   const box = document.getElementById('pendingOrdersBox');
   box.innerHTML = 'Loading...';
   document.getElementById('driverProfileForm').style.display = 'none';
-
   try {
    const res = await fetch('/drivers/orders', {
   headers: { Authorization: 'Bearer ' + token }
 });
 let orders = await res.json();
 
-// ✅ Filter out accepted or canceled orders
+//  Filter out accepted or canceled orders
 orders = orders.filter(o => o.status === 'pending' && !o.driverId);
-
 
     let html = '<h3>Pending Orders</h3>';
     html += `<button onclick="returnToDriverMenu()" style="margin-bottom: 1rem;">Back to Menu</button>`;
@@ -812,7 +771,7 @@ orders = orders.filter(o => o.status === 'pending' && !o.driverId);
     box.innerHTML = 'Failed to load orders.';
   }
 }
-
+// Function to toggle the "What's New" modal
 async function acceptOrder(orderId) {
   const token = localStorage.getItem('token');
   if (!confirm('Accept this order?')) return;
@@ -838,7 +797,7 @@ async function acceptOrder(orderId) {
     alert('Error accepting order.');
   }
 }
-
+// Function to toggle the "What's New" modal
 function showDriverProfileForm() {
   const formBox = document.getElementById('driverProfileForm');
   const ordersBox = document.getElementById('pendingOrdersBox');
@@ -856,11 +815,10 @@ function showDriverProfileForm() {
   <button class="btn" onclick="submitDriverProfile()">Save</button>
 `;
 }
-
+// Function to toggle the "What's New" modal
 async function submitDriverProfile() {
   const token = localStorage.getItem('token');
 
-  // ✅ Require all fields
   if (
     !document.getElementById('d_name').value.trim() ||
     !document.getElementById('d_email').value.trim() ||
@@ -872,7 +830,6 @@ async function submitDriverProfile() {
     alert('Please fill in all fields before submitting.');
     return;
   }
-
   const payload = {
     name: document.getElementById('d_name').value.trim(),
     email: document.getElementById('d_email').value.trim(),
@@ -881,7 +838,6 @@ async function submitDriverProfile() {
     carname: document.getElementById('d_carname').value.trim(),
     locationFrom: document.getElementById('d_location').value.trim()
   };
-
   try {
     const res = await fetch('/drivers/profile', {
       method: 'PUT',
@@ -904,12 +860,12 @@ async function submitDriverProfile() {
   }
 }
 
-
+// Function to toggle the "What's New" modal
 function returnToDriverMenu() {
   document.getElementById('pendingOrdersBox').innerHTML = '';
   document.getElementById('driverProfileForm').style.display = 'none';
 }
-
+// Function to toggle the "What's New" modal
 async function loadDriverAcceptedOrders() {
   const token = localStorage.getItem('token');
   const box = document.getElementById('pendingOrdersBox');
@@ -941,16 +897,14 @@ async function loadDriverAcceptedOrders() {
     ${o.status === 'accepted' ? `<button onclick="cancelAcceptedOrder('${o._id}')">Cancel Order</button>` : ''}
   </div>
 `;
-
       });
     }
-
     box.innerHTML = html;
   } catch {
     box.innerHTML = 'Failed to load accepted orders.';
   }
 }
-
+// Function to toggle the "What's New" modal
 async function cancelAcceptedOrder(orderId) {
   const token = localStorage.getItem('token');
   if (!confirm('Cancel this order?')) return;
@@ -972,7 +926,7 @@ async function cancelAcceptedOrder(orderId) {
     alert('Error canceling order.');
   }
 }
-
+// Function to toggle the "What's New" modal
 async function deleteDriverAccount() {
   const token = localStorage.getItem('token');
   if (!confirm('Are you sure you want to delete your account? This cannot be undone.')) return;
@@ -995,7 +949,7 @@ async function deleteDriverAccount() {
     alert('Error deleting account.');
   }
 }
-
+// Function to toggle the "What's New" modal
 async function completeOrder(orderId) {
   const token = localStorage.getItem('token');
   if (!confirm('Mark this order as completed?')) return;
@@ -1016,7 +970,7 @@ async function completeOrder(orderId) {
     alert('Error completing order.');
   }
 }
-
+// Function to toggle the "What's New" modal
 async function loadDriverCompletedOrders() {
   const token = localStorage.getItem('token');
   const box = document.getElementById('pendingOrdersBox');
@@ -1055,7 +1009,7 @@ async function loadDriverCompletedOrders() {
     box.innerHTML = 'Failed to load completed orders.';
   }
 }
-
+// Function to toggle the "What's New" modal
 async function viewAssignedDriver(orderId) {
   const token = localStorage.getItem('token');
 
@@ -1080,8 +1034,7 @@ async function viewAssignedDriver(orderId) {
     alert('Failed to load driver info.');
   }
 }
-
-
+// Function to toggle the "What's New" modal
 async function deletePassengerAccount() {
   const token = localStorage.getItem('token');
   if (!confirm('Are you sure you want to delete your account? This cannot be undone.')) return;
@@ -1104,7 +1057,7 @@ async function deletePassengerAccount() {
     alert('Error deleting account.');
   }
 }
-
+// Function to toggle the "What's New" modal
 async function loadAllUsers() {
   const token = localStorage.getItem('token');
   const box = document.getElementById('adminContentBox');
@@ -1114,9 +1067,7 @@ async function loadAllUsers() {
     const res = await fetch('/admin/users', {
       headers: { Authorization: 'Bearer ' + token }
     });
-
     const users = await res.json();
-
     const passengers = users.filter(u => u.role === 'passenger');
     const drivers = users.filter(u => u.role === 'driver');
 
@@ -1134,7 +1085,6 @@ async function loadAllUsers() {
         `;
       });
     }
-
     html += `<h3>Driver Accounts</h3>`;
     if (drivers.length === 0) {
       html += '<p>No driver accounts found.</p>';
@@ -1149,7 +1099,6 @@ async function loadAllUsers() {
         `;
       });
     }
-
     box.innerHTML = html;
   } catch (err) {
     console.error('Error loading users:', err);
@@ -1157,7 +1106,7 @@ async function loadAllUsers() {
   }
 }
 
-
+// Function to toggle the "What's New" modal
 async function loadAllOrders() {
   const token = localStorage.getItem('token');
   const box = document.getElementById('adminContentBox');
@@ -1167,15 +1116,12 @@ async function loadAllOrders() {
     const res = await fetch('/admin/orders', {
       headers: { Authorization: 'Bearer ' + token }
     });
-
     const orders = await res.json();
-
     const pendingOrders = orders.filter(o => o.status === 'pending');
     const acceptedOrders = orders.filter(o => o.status === 'accepted');
     const completedOrders = orders.filter(o => o.status === 'completed');
-
     let html = '';
-
+// Function to render each order section
     function renderOrderSection(title, orderList, color) {
       html += `<h3 style="margin-top: 20px;">${title}</h3>`;
       if (orderList.length === 0) {
@@ -1196,7 +1142,6 @@ async function loadAllOrders() {
         });
       }
     }
-
     renderOrderSection('Pending Orders', pendingOrders, '#fff3cd');
     renderOrderSection('Accepted Orders', acceptedOrders, '#d1ecf1');
     renderOrderSection('Completed Orders', completedOrders, '#d4edda');
@@ -1207,18 +1152,15 @@ async function loadAllOrders() {
     box.innerHTML = 'Failed to load orders.';
   }
 }
-
-
+// Function to toggle the "What's New" modal
 async function deleteUser(id) {
   const token = localStorage.getItem('token');
   if (!confirm('Delete this user?')) return;
-
   try {
     const res = await fetch(`/admin/users/${id}`, {
       method: 'DELETE',
       headers: { Authorization: 'Bearer ' + token }
     });
-
     if (res.status === 204) {
       alert('User deleted.');
       loadAllUsers();
@@ -1231,22 +1173,22 @@ async function deleteUser(id) {
     console.error(err);
   }
 }
-
+// Function to toggle the "What's New" modal
 function toggleWhatsNew() {
   const modal = document.getElementById('whatsNewModal');
   modal.style.display = modal.style.display === 'none' ? 'block' : 'none';
 }
-
+// Function to toggle the "What's New" modal
 function showFeedbackForm(orderId) {
   document.getElementById('feedbackOrderId').value = orderId;
   document.getElementById('feedbackText').value = '';
   document.getElementById('feedbackModal').style.display = 'block';
 }
-
+// Function to toggle the "What's New" modal
 function hideFeedbackModal() {
   document.getElementById('feedbackModal').style.display = 'none';
 }
-
+// Function to toggle the "What's New" modal
 async function submitFeedback() {
   const orderId = document.getElementById('feedbackOrderId').value;
   const feedback = document.getElementById('feedbackText').value.trim();
@@ -1266,7 +1208,7 @@ async function submitFeedback() {
       },
       body: JSON.stringify({ feedback })
     });
-
+// Check if response is ok
     const data = await res.json();
     if (res.ok) {
       alert('Feedback submitted!');
