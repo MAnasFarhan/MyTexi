@@ -13,15 +13,18 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const uri = 'mongodb+srv://Anas:KxGZ8SZBWykDuG1d@cluster0.7hfi53x.mongodb.net/';
+const uri = 'mongodb+srv://Farhan:Anaskulim123@mytexi-c.t2bkcu2.mongodb.net/';
 const client = new MongoClient(uri);
 let db;
+
 
 const JWT_SECRET = process.env.JWT_SECRET;
 const JWT_EXPIRES_IN = process.env.JWT_EXPIRES_IN || '1d';
 const saltRounds = 10;
 
 
+// Middleware for authentication and authorization
+// This middleware checks for a valid JWT token in the request headers     
 function authenticate(req, res, next) {
     const token = req.headers.authorization?.split(' ')[1];
     if (!token) return res.status(401).json({ error: 'Unauthorized' });
@@ -49,8 +52,12 @@ async function start() {
         await client.connect();
         db = client.db('MyTaxi');
         console.log("Connected to MongoDB");
+
+        // --- Start Server --- //
+        app.listen(port, () => console.log(`Server running at http://localhost:${port}`));
     } catch (err) {
         console.error(err);
+        process.exit(1); // Exit if DB connection fails
     }
 }
 
@@ -341,7 +348,7 @@ app.delete('/passengers/account', authenticate, authorize(['passenger']), async 
   }
 });
 
-// 🚨 Add this route exactly as shown below
+//  Add this route exactly as shown below
 app.post('/passengers/order/:id/feedback', authenticate, authorize(['passenger']), async (req, res) => {
   const { feedback } = req.body;
 
@@ -564,8 +571,8 @@ app.get('/auth/profile', authenticate, async (req, res) => {
     res.status(500).json({ error: 'Failed to fetch profile' });
   }
 });
-
-
+// --- Start Server --- //
+// (Moved to start() to ensure DB connection before listening)
 app.use(express.static(path.join(__dirname)));
 
 // --- Start Server --- //
