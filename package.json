@@ -6,7 +6,6 @@
   "scripts": {
     "start": "node index.js"
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MAnasFarhan/MyTexi.git"
@@ -19,8 +18,11 @@
   },
   "homepage": "https://github.com/MAnasFarhan/MyTexi#readme",
   "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.0.1",
     "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.17.0"
-  },
-  "devDependencies": {}
+  }
 }
