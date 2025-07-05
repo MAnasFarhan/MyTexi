@@ -1076,28 +1076,32 @@ async function loadAllUsers() {
       html += '<p>No passenger accounts found.</p>';
     } else {
       passengers.forEach(u => {
-        html += `
-          <div style="background:#e0f7fa; padding:10px; margin-bottom:10px; border-radius:10px;">
-            <strong>Name:</strong> ${u.name}<br>
-            <strong>Email:</strong> ${u.email}<br>
-            <strong>Role:</strong> ${u.role}
-          </div>
-        `;
-      });
+  html += `
+    <div style="background:#e0f7fa; padding:10px; margin-bottom:10px; border-radius:10px;">
+      <strong>Name:</strong> ${u.name}<br>
+      <strong>Email:</strong> ${u.email}<br>
+      <strong>Role:</strong> ${u.role}<br>
+      <button onclick="deleteUser('${u._id}')" style="margin-top: 0.5rem;">Delete User</button>
+    </div>
+  `;
+});
+
     }
     html += `<h3>Driver Accounts</h3>`;
     if (drivers.length === 0) {
       html += '<p>No driver accounts found.</p>';
     } else {
       drivers.forEach(u => {
-        html += `
-          <div style="background:#fce4ec; padding:10px; margin-bottom:10px; border-radius:10px;">
-            <strong>Name:</strong> ${u.name}<br>
-            <strong>Email:</strong> ${u.email}<br>
-            <strong>Role:</strong> ${u.role}
-          </div>
-        `;
-      });
+  html += `
+    <div style="background:#fce4ec; padding:10px; margin-bottom:10px; border-radius:10px;">
+      <strong>Name:</strong> ${u.name}<br>
+      <strong>Email:</strong> ${u.email}<br>
+      <strong>Role:</strong> ${u.role}<br>
+      <button onclick="deleteUser('${u._id}')" style="margin-top: 0.5rem;">Delete User</button>
+    </div>
+  `;
+});
+
     }
     box.innerHTML = html;
   } catch (err) {
